@@ -1,0 +1,40 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class FibonacciSeries {
+
+    private int num1;
+    private int result=0;
+
+    public FibonacciSeries(){
+    }
+
+    public void FibonacciSeries() {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Find the Fibonacci Series till level \n");
+        num1 = scan.nextInt();
+
+        if (num1 == 1) {
+            System.out.print("Fibonacci Series is 1 \n");
+        } else {
+            int Array1[] = new int[num1];
+            Array1[0] = 1;
+            Array1[1] = 1;
+
+            for (int i = 1; i < num1 - 1; i++) {
+                Array1[i + 1] = Array1[i] + Array1[i - 1];
+            }
+
+            System.out.print("Fibonacci Series is :\n");
+            for (int i = 0; i < num1; i++) {
+                System.out.print(Array1[i] + " ");
+            }
+
+
+        }
+    }
+
+}
