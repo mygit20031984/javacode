@@ -1,0 +1,37 @@
+package com.swedbank.datalake.main;
+
+public class main {
+
+    public static void main(String[] args) throws Exception {
+
+      /*  four_lvl fl1 = new four_lvl();
+        fl1.four_lvl("UCL_170991108_IB_RED.xml", "Case", "Household", "Customer", "Owner", "owner");
+
+        four_lvl fl2 = new four_lvl();
+        fl2.four_lvl("UCL_170991108_IB_RED.xml", "Case", "Household", "Customer", "Credit", "Credit");
+
+        four_lvl fl3 = new four_lvl();
+        fl3.four_lvl("UCL_170991108_IB_RED.xml", "Case", "Application", "ApplicationHousehold", "Applicant", "Applicant");
+
+
+       // six_lvl sl6 = new six_lvl();
+       // sl6.six_lvl("UCL_20190905_912227432.xml", "Case", "Household", "Customer",
+        // "UCIndividualReport", "UCIndividualGroup", "UCIndividualTerm", "cos_ucl_ucindividualterm");
+        five_lvl fl5 = new five_lvl();
+        fl5.five_lvl("UCL_20190905_912227432.xml", "Case", "Household", "Customer",
+                "UCIndividualReport", "UCIndividualGroup", "cos_ucl_ucindividualgroup");*/
+
+     /*four_lvl fl1 = new four_lvl();
+      fl1.four_lvl("UCL_20190905_912227432.xml",
+              "Case", "Household","Customer", "CreditCompilation", "cos_ucl_creditcompilation");*/
+
+      three_lvl tl1 = new three_lvl();
+      tl1.three_lvl("UCL_20190905_912227432.xml","Case", "Offer","OfferAction",
+              "cos_ucl_offeraction");
+
+     /*two_lvl tl1 = new two_lvl();
+      tl1.two_lvl("UCL_20190905_912227432.xml", "Case", "CreditDecision", "cos_ucl_CreditDecision");*/
+
+    }
+
+}
