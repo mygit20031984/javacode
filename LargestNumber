@@ -1,0 +1,40 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Largestnumber {
+
+    private int num1;
+    private int num2;
+    private int num3;
+    private int temp;
+    private int result;
+
+
+    public Largestnumber(){
+    }
+
+
+    public void largenum(){
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter the number1:");
+        num1 = scan.nextInt();
+
+        System.out.print("Enter the number2:");
+        num2 = scan.nextInt();
+
+        System.out.print("Enter the number3:");
+        num3 = scan.nextInt();
+        scan.close();
+
+        temp = (num1>num2) ? num1:num2;
+        result = (num3>temp) ? num3:temp;
+
+        System.out.print("Largest Number is:" + result);
+
+    }
+
+
+}
