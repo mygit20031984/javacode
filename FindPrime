@@ -1,0 +1,45 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Findprime {
+
+    private int num;
+    private boolean ISprime;
+    private int result=0;
+
+    public Findprime(){
+    }
+
+    public void Findprime() {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter the Number \n");
+        num = scan.nextInt();
+
+        if (num<3){
+            ISprime=false;
+        }else {
+            for (int i = 2; i <=num/2; i++) {
+                int temp = num % i;
+                if (temp == 0) {
+                    ISprime = false;
+                    break;
+                }else {
+                    ISprime=true;
+                }
+            }
+        }
+
+        if(ISprime==true)
+        {
+            System.out.print("Number is Prime \n");
+        }else {
+            System.out.print("Number is Not a Prime \n");
+        }
+
+
+    }
+
+}
