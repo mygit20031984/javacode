@@ -1,0 +1,30 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class FindFactorial {
+
+    int num1;
+    int result=1;
+
+    public FindFactorial(){
+
+    }
+
+
+    public void FindFactorial() {
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the Number to find the factorial: \n");
+        num1 = scan.nextInt();
+
+        for (int i=1; i<=num1;i++){
+            result=result*i;
+        }
+
+        System.out.print("Factorial of " +num1+ " is " +result);
+    }
+
+
+
+}
