@@ -1,0 +1,26 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Sumtwonumbers {
+    private int num1;
+    private int num2;
+    private int sum;
+
+    public Sumtwonumbers(){
+    }
+
+
+    public void makesum(){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the num1:");
+        num1 = scan.nextInt();
+
+        System.out.print("Enter the num2:");
+        num2 = scan.nextInt();
+        scan.close();
+
+        sum = num1 + num2;
+        System.out.print("Summation of num1 and num2 is:" +sum);
+    }
+}
