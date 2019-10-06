@@ -1,0 +1,46 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class VowelConsonent {
+
+    private char c1;
+    private char c2;
+    public VowelConsonent(){
+    }
+
+
+    public void ISVowCon(){
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter the Character to check whether it is Consonent or Vowel:");
+        c1 = scan.next().charAt(0);
+        c2= Character.toLowerCase(c1);
+        scan.close();
+
+        switch(c2)
+        {
+            case 'a':
+                System.out.println("Character " + c1 + " is Vowel");
+                break;
+            case 'e':
+                System.out.println("Character " + c1 + " is Vowel");
+                break;
+            case 'i':
+                System.out.println("Character " + c1 + " is Vowel");
+                break;
+            case 'o':
+                System.out.println("Character " + c1 + " is Vowel");
+                break;
+            case 'u':
+                System.out.println("Character " + c1 + " is Vowel");
+                break;
+            default:
+                System.out.println("Character " + c1 + " is Consonent");
+        }
+
+
+    }
+
+}
