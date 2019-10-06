@@ -1,0 +1,50 @@
+package com.company;
+
+import javax.naming.Name;
+
+public class JuniorStudent {
+
+    private String Name;
+    private String FatherName;
+    private String MotherName;
+    private int inClass;
+    private boolean feepaid;
+    private int id;
+
+    public JuniorStudent(int id, String Name){
+        this.id=id;
+        this.Name=Name;
+    }
+
+   public void setName(){
+   }
+
+   public void setFatherName(String fatherName){
+        this.FatherName=fatherName;
+    }
+
+    public void setMotherName(String motherName){
+        this.MotherName=motherName;
+    }
+
+    public void setInClass(int inclass){
+        this.inClass=inclass;
+    }
+
+
+    public void feepaid(boolean feepaid){
+        this.feepaid=feepaid;
+    }
+
+
+    public void showall(){
+        System.out.println(this.Name);
+        System.out.println(this.FatherName);
+        System.out.println(this.MotherName);
+        System.out.println(this.inClass);
+        System.out.println(this.feepaid);
+
+
+    }
+
+}
