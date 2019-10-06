@@ -1,0 +1,23 @@
+package com.company;
+
+import java.util.ArrayList;
+
+
+public class NewArrayList {
+
+
+    public NewArrayList() {
+    }
+
+    public void NewArrayList() {
+
+              ArrayList<String> studentlist = new ArrayList<>();
+
+        studentlist.add("Ashutosh");
+        studentlist.add("Shashank");
+        studentlist.add(1,"Ashutosh_new");
+
+        System.out.print(studentlist.get(1));
+
+    }
+}
