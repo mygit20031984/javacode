@@ -1,0 +1,117 @@
+package com.swedbank.datalake.main;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class six_lvl
+{
+
+    public static void six_lvl(String xmlString, String lvla1, String lvla2, String lvla3, String lvla4, String lvla5, String lvla6, String tablename)
+            throws ParserConfigurationException, IOException, SAXException
+    {
+
+        String lvl1, lvl2, lvl3, lvl4, lvl5, lvl6;
+        lvl1 = lvla1;
+        lvl2 = lvla2;
+        lvl3 = lvla3;
+        lvl4 = lvla4;
+        lvl5 = lvla5;
+        lvl6 = lvla6;
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.parse(xmlString);
+
+        NodeList lvll1 = (NodeList) doc.getElementsByTagName(String.valueOf(lvl1));
+
+
+        for (int i = 0; i < lvll1.getLength(); i++)
+        {
+            int seq1 = i + 1;
+
+            NodeList lvll2 = (NodeList) ((Element)lvll1.item(i)).getElementsByTagName(String.valueOf(lvl2));
+
+            for (int j = 0; j < lvll2.getLength(); j++)
+            {
+                int seq2 = j + 1;
+
+                NodeList lvll3 = (NodeList) ((Element)lvll2.item(j)).getElementsByTagName(String.valueOf(lvl3));
+
+                for (int k = 0; k < lvll3.getLength(); k++)
+                {
+
+                    int seq3 = k + 1;
+
+                    NodeList lvll4 = (NodeList) ((Element)lvll3.item(k)).getElementsByTagName(String.valueOf(lvl4));
+
+
+                    for (int l = 0; l < lvll4.getLength(); l++)
+                    {
+                        int seq4 = l + 1;
+
+                        NodeList lvll5 = (NodeList) ((Element) lvll4.item(l)).getElementsByTagName(String.valueOf(lvl5));
+                        FileWriter csvWriter = new FileWriter(tablename + ".csv");
+
+                        for (int m = 0; m < lvll5.getLength(); m++)
+                        {
+                            int seq5 = m + 1;
+                            System.out.println("lvll5 Length is: " + lvll5.getLength());
+                            NodeList lvll6 = (NodeList) ((Element) lvll5.item(m)).getElementsByTagName(String.valueOf(lvl6));
+
+
+                            for (int n = 0; n < lvll6.getLength(); n++)
+                            {
+                                System.out.println("lvll6 Length is: " + lvll6.getLength());
+                                int seq6 = n + 1;
+                                int seq_num = 1;
+                                NodeList OwnerChildren = lvll6.item(n).getChildNodes();
+
+                                //Only want stuff from ELEMENT nodes
+                              /*  System.out.println("seq_num :" + seq_num);
+                                System.out.println("seq1 :" + seq1);
+                                System.out.println("seq2 :" + seq2);
+                                System.out.println("seq3 :" + seq3);
+                                System.out.println("seq4 :" + seq4);
+                                System.out.println("seq5 :" + seq5);
+                                System.out.println("seq6 :" + seq6);*/
+                                csvWriter.append(seq_num + "," + seq1 + "," + seq2 + "," + seq3 + "," + seq4 + "," + seq5 + "," + seq6);
+
+
+                                for (int o = 0; o < OwnerChildren.getLength(); o++)
+                                {
+
+                                    Node current = OwnerChildren.item(o);
+
+
+                                    if (current.getNodeType() == Node.ELEMENT_NODE)
+                                    {
+                                        System.out.println(current.getNodeName()+": "+current.getTextContent());
+                                        csvWriter.append(",");
+                                        csvWriter.append(current.getTextContent());
+                                    }
+
+                                }
+                                csvWriter.append("\n");
+                                //System.out.println("****");
+
+                            }
+
+                        }
+                       csvWriter.flush();
+                       csvWriter.close();
+
+                    }
+                }
+            }
+        }
+    }
+}
