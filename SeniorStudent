@@ -1,0 +1,26 @@
+package com.company;
+
+public class SeniorStudent extends JuniorStudent{
+
+    public SeniorStudent(int id, String Name){
+    super(id, Name);
+    }
+
+
+    private int Batch;
+    private String section;
+    private int height;
+
+    public void setadditionalInfo(int Batch, String section, int height){
+        this.Batch=Batch;
+        this.section=section;
+        this.height=height;
+    }
+
+    @Override
+    public void showall() {
+        super.showall();
+        System.out.println(this.Batch +" " + this.section +" " + this.height);
+
+    }
+}
